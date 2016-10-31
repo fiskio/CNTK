@@ -68,7 +68,7 @@ Param(
     [parameter(Mandatory=$false)]
     [switch] $ForceWheelUpdate,
     [parameter(Mandatory=$false)]
-    [string] $RepoTag="v2.0.beta1.0",
+    [string] $RepoTag="v2.0.beta2.0",
     [parameter(Mandatory=$false)]
     [string] $RepoLocation="c:\repos\CNTK"
 )
