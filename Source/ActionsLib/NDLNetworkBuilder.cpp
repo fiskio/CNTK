@@ -174,6 +174,8 @@ void NDLNodeEvaluatorImpl<ElemType>::Evaluate(NDLNode<ElemType>* node, const wst
                     RuntimeError("File pointed to by initFromFilePath does not exist: %s", initFromFilePath.c_str());
                 dynamic_pointer_cast<LearnableParameter<ElemType>>(nodePtr)->InitFromFile(msra::strfun::utf16(initFromFilePath));
             }
+            else if (EqualCI(initString, L"heNormal"))
+                m_net->InitLearnableParameters(nodePtr, L"heNormal", initValueScale, forcedRandomSeed < 0 ? randomSeed++ : (unsigned long)forcedRandomSeed, initOnCPUOnly);
             else
                 RuntimeError("'init' must be one of the values of [ uniform | gaussian | fixedValue | fromFile ]");
         }
